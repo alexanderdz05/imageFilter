@@ -17,18 +17,18 @@ public class MyFrame extends JFrame implements ActionListener {
 	// The components of the JFrame:
 	private static final long serialVersionUID = 1L;
 	private JLabel titleLabel;
-    private JLabel descriptionLabel;
-    private JButton openImageButton;
-    private JPanel imagePanel;
-    private JLabel filterLabel;
-    private JComboBox<String> filterComboBox;
-    private JButton applyFilterButton;
-    private JButton downloadButton;
-    private ImageIcon selectedImage;
+    	private JLabel descriptionLabel;
+	private JButton openImageButton;
+	private JPanel imagePanel;
+	private JLabel filterLabel;
+	private JComboBox<String> filterComboBox;
+	private JButton applyFilterButton;
+	private JButton downloadButton;
+	private ImageIcon selectedImage;
     
-    // The aspect ratio of 16:9 for the imagePanel component:
-    private final int ASPECT_RATIO_WIDTH = 16;
-    private final int ASPECT_RATIO_HEIGHT = 9;
+	// The aspect ratio of 16:9 for the imagePanel component:
+	private final int ASPECT_RATIO_WIDTH = 16;
+	private final int ASPECT_RATIO_HEIGHT = 9;
 	
 	MyFrame() {
 		// Frame
@@ -41,300 +41,300 @@ public class MyFrame extends JFrame implements ActionListener {
 		
 		// Title label
 		titleLabel = new JLabel("Image Filter");
-        titleLabel.setFont(new Font("Times New Roman", Font.BOLD, 24));
-        titleLabel.setBounds(350, 5, 200, 30);
-        this.add(titleLabel);
+        	titleLabel.setFont(new Font("Times New Roman", Font.BOLD, 24));
+        	titleLabel.setBounds(350, 5, 200, 30);
+        	this.add(titleLabel);
         
-        // Description label
-        descriptionLabel = new JLabel("<html> Welcome to Image Filter! To get started, please click on 'Open Image', select an image, and then select a filter <br> "
+        	// Description label
+        	descriptionLabel = new JLabel("<html> Welcome to Image Filter! To get started, please click on 'Open Image', select an image, and then select a filter <br> "
         		+ "to be applied. Upon selection, you may click on 'Apply Filter' and see your new image! "
         		+ "Finally, you may overlap filters (wouldn't recommend for some) or download your image by pressing 'Download'. Have fun! </html>");
-        descriptionLabel.setFont(new Font("Arial", Font.PLAIN, 16));
-        descriptionLabel.setBounds(10, 40, 800, 55);
-        this.add(descriptionLabel);
+        	descriptionLabel.setFont(new Font("Arial", Font.PLAIN, 16));
+        	descriptionLabel.setBounds(10, 40, 800, 55);
+        	this.add(descriptionLabel);
         
-        // Open image button
-        openImageButton = new JButton("Open Image");
-        openImageButton.setBounds(365, 100, 110, 30);
-        openImageButton.setFocusable(false);
-        openImageButton.setFont(new Font("Arial", Font.PLAIN, 14));
-        openImageButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        openImageButton.addActionListener(this);
-        this.add(openImageButton);
+	        // Open image button
+	        openImageButton = new JButton("Open Image");
+	        openImageButton.setBounds(365, 100, 110, 30);
+	        openImageButton.setFocusable(false);
+	        openImageButton.setFont(new Font("Arial", Font.PLAIN, 14));
+	        openImageButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+	        openImageButton.addActionListener(this);
+	        this.add(openImageButton);
         
-        // Image panel
-        int panelWidth = 600;
-        int panelHeight = panelWidth * ASPECT_RATIO_HEIGHT / ASPECT_RATIO_WIDTH;
-        int panelX = 100 + (600 - panelWidth) / 2;
-        int panelY = 175 + (250 - panelHeight) / 2;
-        imagePanel = new JPanel();
-        imagePanel.setBounds(panelX, panelY, panelWidth, panelHeight);
-        imagePanel.setBackground(Color.white);
-        this.add(imagePanel);
+	        // Image panel
+	        int panelWidth = 600;
+	        int panelHeight = panelWidth * ASPECT_RATIO_HEIGHT / ASPECT_RATIO_WIDTH;
+	        int panelX = 100 + (600 - panelWidth) / 2;
+	        int panelY = 175 + (250 - panelHeight) / 2;
+	        imagePanel = new JPanel();
+	        imagePanel.setBounds(panelX, panelY, panelWidth, panelHeight);
+	        imagePanel.setBackground(Color.white);
+	        this.add(imagePanel);
         
-        // Filter label
-        filterLabel = new JLabel("Select Filter:");
-        filterLabel.setFont(new Font("Arial", Font.PLAIN, 16));
-        filterLabel.setBounds(100, 480, 100, 20);
-        this.add(filterLabel);
+	        // Filter label
+	        filterLabel = new JLabel("Select Filter:");
+	        filterLabel.setFont(new Font("Arial", Font.PLAIN, 16));
+	        filterLabel.setBounds(100, 480, 100, 20);
+	        this.add(filterLabel);
         
-        // Filter combo box
-        filterComboBox = new JComboBox<>();
-        filterComboBox.addItem("Grayscale");
-        filterComboBox.addItem("Blur");
-        filterComboBox.addItem("Brighten");
-        filterComboBox.addItem("Darken");
-        filterComboBox.addItem("Bluescale");
-        filterComboBox.addItem("Greenscale");
-        filterComboBox.addItem("Redscale");
-        filterComboBox.addItem("Yellowscale");
-        filterComboBox.addItem("Tealscale");
-        filterComboBox.addItem("Purplescale");
-        filterComboBox.addItem("Radioactive");
-        filterComboBox.addItem("Static");
-        filterComboBox.addItem("Random");
-        filterComboBox.addItem("Blizzard Special");
-        filterComboBox.setBounds(210, 480, 120, 20);
-        filterComboBox.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        this.add(filterComboBox);
+	        // Filter combo box
+	        filterComboBox = new JComboBox<>();
+	        filterComboBox.addItem("Grayscale");
+	        filterComboBox.addItem("Blur");
+	        filterComboBox.addItem("Brighten");
+	        filterComboBox.addItem("Darken");
+	        filterComboBox.addItem("Bluescale");
+	        filterComboBox.addItem("Greenscale");
+	        filterComboBox.addItem("Redscale");
+	        filterComboBox.addItem("Yellowscale");
+	        filterComboBox.addItem("Tealscale");
+	        filterComboBox.addItem("Purplescale");
+	        filterComboBox.addItem("Radioactive");
+	        filterComboBox.addItem("Static");
+	        filterComboBox.addItem("Random");
+	        filterComboBox.addItem("Blizzard Special");
+	        filterComboBox.setBounds(210, 480, 120, 20);
+	        filterComboBox.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+	        this.add(filterComboBox);
         
-        // Apply filter button
-        applyFilterButton = new JButton("Apply Filter");
-        applyFilterButton.setBounds(600, 480, 100, 20);
-        applyFilterButton.setFocusable(false);
-        applyFilterButton.setFont(new Font("Arial", Font.PLAIN, 14));
-        applyFilterButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        applyFilterButton.addActionListener(this);
-        this.add(applyFilterButton);
+	        // Apply filter button
+	        applyFilterButton = new JButton("Apply Filter");
+	        applyFilterButton.setBounds(600, 480, 100, 20);
+	        applyFilterButton.setFocusable(false);
+	        applyFilterButton.setFont(new Font("Arial", Font.PLAIN, 14));
+	        applyFilterButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+	        applyFilterButton.addActionListener(this);
+	        this.add(applyFilterButton);
         
-        // Download button
-        downloadButton = new JButton("Download");
-        downloadButton.setBounds(370, 520, 100, 20);
-        downloadButton.setFocusable(false);
-        downloadButton.setFont(new Font("Arial", Font.PLAIN, 14));
-        downloadButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        downloadButton.addActionListener(this);
-        this.add(downloadButton);
+	        // Download button
+	        downloadButton = new JButton("Download");
+	        downloadButton.setBounds(370, 520, 100, 20);
+	        downloadButton.setFocusable(false);
+	        downloadButton.setFont(new Font("Arial", Font.PLAIN, 14));
+	        downloadButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+	        downloadButton.addActionListener(this);
+	        this.add(downloadButton);
 
-        // set visibility 
-        this.setVisible(true);
-	}
-
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
-		
-		/* Action Performed Method --> void [method]:
-		 * First condition: openImageButton: opens the image from the user's computer.
-		 * Second condition: applyFilterButton: applies the filter to the selected image.
-		 * Third condition: downloadButton: download's the filtered image.
-		 */
-		
-		/* openImageButton --> [actionEvent]:
-		 * 1) Creates JFileChooser (fileChooser) object that allows user to select a file from their computer.
-		 * 2) fileChooser.setFileFilter() restricts the user to only select images that are in the jpg, jpeg, or png file formats.
-		 * 3) Creates an int (result) that awaits user's choice from the user's computer.
-		 * 4) if statement checks if the user clicked 'OK' or approved a choice.
-		 * 		1) Creates a String (imagePath) that gets the path of the user's selected file.
-		 * 		2) uses selectedImage (an imageIcon created outside constructor) and creates the object using imagePath of the image
-		 * 		3) seletedImage gets called the resizeImage() method that passes in the selectedImage, the width of the panel, and height of the panel components. More instructions in the method.
-		 * 		4) displayImage() method gets called, which displays the image to the imagePanel component.
-		 * 5) else statement allows an error to display if the user somehow selects the wrong file type.
-		 */
-		
-		if (e.getSource() == openImageButton) {
-			JFileChooser fileChooser = new JFileChooser();
-            fileChooser.setFileFilter(new FileNameExtensionFilter("Images", "jpg", "jpeg", "png"));
-            int result = fileChooser.showOpenDialog(this);
-            if (result == JFileChooser.APPROVE_OPTION) {
-                String imagePath = fileChooser.getSelectedFile().getPath();
-                selectedImage = new ImageIcon(imagePath);
-                selectedImage = resizeImage(selectedImage, imagePanel.getWidth(), imagePanel.getHeight());
-                displayImage(selectedImage);
-            } 
-            else {
-            	imageError();
-            }
+	        // set visibility 
+	        this.setVisible(true);
 		}
-		
-		/* applyFilterButton --> [actionEvent]:
-		 * 1) Creates a String (selectedFilter) that converts the selected option from the comboBox into a String object.
-		 * 2) Switch statement for selectedFilter:
-		 * 		1) case Grayscale: calls grayScale() method that makes the image gray.
-		 * 		2) case Blur: 
-		 * 			a) Creates an int (blurScale) and sets it to -1 to start while loop.
-		 * 			b) while blurScale is less than 1 and greater than 10 (invalid options): try/catch error
-		 * 			c) Try:
-		 * 				1) Creates a String (input) and takes the users option.
-		 * 				2) if the input is blank (null), break out of the while loop
-		 * 				3) convert blurScale option from user to an Integer. 
-		 * 				4) if the integer isn't in range, the user must re-enter a value.
-		 * 			d) Catch error:
-		 * 				1) The user must enter a numeric value.
-		 * 			e) if blurScale is in range, call blur() method and pass blurScale to blur the image (see below for instructions).
-		 * 		3) case Brighten:
-		 * 			a) Creates an int (brightnessScale) and sets it to -1 to start while loop.
-		 * 			b) while brightnessScale is less than 1 and greater than 100 (invalid options): try/catch error
-		 * 			c) Try:
-		 * 				1) Creates a String (input) and takes the users option.
-		 * 				2) if the input is blank (null), break out of the while loop
-		 * 				3) convert brightnessScale option from user to an Integer. 
-		 * 				4) if the integer isn't in range, the user must re-enter a value.
-		 * 			d) Catch error:
-		 * 				1) The user must enter a numeric value.
-		 * 			e) if brightnessScale is in range, call brighten() method and pass brightnessScale to brighten the image (see below for instructions). 
-		 * 		4) case Darken:
-		 * 			a) Creates an int (darknessScale) and sets it to -1 to start while loop.
-		 * 			b) while darknessScale is less than 1 and greater than 100 (invalid options): try/catch error
-		 * 			c) Try:
-		 * 				1) Creates a String (input) and takes the users option.
-		 * 				2) if the input is blank (null), break out of the while loop
-		 * 				3) convert darknessScale option from user to an Integer. 
-		 * 				4) if the integer isn't in range, the user must re-enter a value.
-		 * 			d) Catch error:
-		 * 				1) The user must enter a numeric value.
-		 * 			e) if darknessScale is in range, call darken() method and pass darknessScale to darken the image (see below for instructions).
-		 * 		5) case Bluescale:
-		 * 			a) Calls blueScale() method to make the image blue.
-		 * 		6) case Greenscale:
-		 * 			a) Calls greenScale() method to make the image green.
-		 * 		7) case Redscale:
-		 * 			a) Calls redScale() method to make the image red.
-		 * 		8) case yellowscale:
-		 * 			a) Calls yellowScale() method to make the image yellow.
-		 * 		9) case Tealscale:
-		 * 			a) Calls tealsScale() method to make the image teal.
-		 * 		10) case Purplescale:
-		 * 			a) Calls purpleScale() method to make the image purple.
-		 * 		11) case Radioactive:
-		 * 			a) Calls radioactive() method to make the image radioactive.
-		 * 		12) case Static:
-		 * 			a) Calls staticFilter() method to make the image static.
-		 * 		13) case Random:
-		 * 			a) Calls randomColor() method to display the image with a random color.
-		 * 		14) case Blizzard Special:
-		 * 			a) Calls blizzardSpecial() method to give a 'GET HACKED' message and secret clickable link. 
-		 * 		15) Default: display message to display that there's an error passing in a filter. 
-		 */
-		
-		else if (e.getSource() == applyFilterButton) {
-            //System.out.println(filterComboBox.getSelectedItem());
-            String selectedFilter = (String) filterComboBox.getSelectedItem();
-            switch (selectedFilter) {
-            	
-            	case "Grayscale":
-            		grayScale();
-            		break;
-            	
-            	case "Blur":
-            		int blurScale = -1;
-            		while (blurScale < 1 || blurScale > 10) {
-            			try {
-            				String input = JOptionPane.showInputDialog("What blur scale would you like? \n 1-10 (1 is minor, 10 is serious)");
-            				if (input == null) {
-            					break;
-            				}
-            				blurScale = Integer.parseInt(input);
-            				if (blurScale < 1 || blurScale > 10) {
-            					JOptionPane.showConfirmDialog(null, "You must enter a valid number between 1 and 10.");
-            				}
-            			} catch (NumberFormatException ex) {
-            				JOptionPane.showMessageDialog(null, "Invalid input. Please enter a numeric value.");
-            			}
-            			if (blurScale >=1 && blurScale <= 10) {
-            				blur(blurScale);
-            			}
-            		}
-            		break;
-            		
-            	case "Brighten":
-            		int brightnessLevel = -1;
-            		while (brightnessLevel < 1 || brightnessLevel > 100) {
-            			try {
-            				String input = JOptionPane.showInputDialog("What brightness scale would you like? \n 1-100 (1 is minor, 100 is serious)");
-            				if (input == null) {
-            					break;
-            				}
-            				brightnessLevel = Integer.parseInt(input);
-            				if (brightnessLevel < 1 || brightnessLevel > 100) {
-            					JOptionPane.showConfirmDialog(null, "You must enter a valid number between 1 and 100.");
-            				}
-            			} catch (NumberFormatException ex) {
-            				JOptionPane.showMessageDialog(null, "Invalid input. Please enter a numeric value.");
-            			}
-            		}
-            		if (brightnessLevel >=1 && brightnessLevel <= 100) {
-            			brighten(brightnessLevel);
-            		}
-            		break;
-            		
-            	case "Darken":
-            	    int darknessLevel = -1;
-            	    while (darknessLevel < 1 || darknessLevel > 100) {
-            	        try {
-            	            String input = JOptionPane.showInputDialog("What darkness scale would you like? \n 1-100 (1 is minor, 100 is serious)");
-            	            if (input == null) {
-            	                // User clicked cancel or closed the dialog
-            	                break;
-            	            }
-            	            darknessLevel = Integer.parseInt(input);
-            	            if (darknessLevel < 1 || darknessLevel > 100) {
-            	                JOptionPane.showMessageDialog(null, "You must enter a valid number between 1 and 100.");
-            	            }
-            	        } catch (NumberFormatException ex) {
-            	            JOptionPane.showMessageDialog(null, "Invalid input. Please enter a numeric value.");
-            	        }
-            	    }
-            	    if (darknessLevel >= 1 && darknessLevel <= 100) {
-            	        darken(darknessLevel);
-            	    }
-            	    break;
-            	    
-            	case "Bluescale":
-            		blueScale();
-            		break;
-            	
-            	case "Greenscale":
-            		greenScale();
-            		break;
-            	
-            	case "Redscale":
-            		redScale();
-            		break;
-            	
-            	case "Yellowscale":
-            		yellowScale();
-            		break;
-            		
-            	case "Tealscale":
-            		tealScale();
-            		break;
-            		
-            	case "Purplescale":
-            		purpleScale();
-            		break;
-            		
-            	case "Radioactive":
-            		radioactive();
-            		break;
-            		
-            	case "Static":
-            		staticFilter();
-            		break;
-            		
-            	case "Random":
-            		randomColor();
-            		break;
-            	
-            	case "Blizzard Special":
-            		blizzardSpecial();
-            		break;
-            	
-            	default:
-            		JOptionPane.showMessageDialog(null, "Error while accessing filter. Please select an option");
-            		break;
-            }
-        }
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			
+			/* Action Performed Method --> void [method]:
+			 * First condition: openImageButton: opens the image from the user's computer.
+			 * Second condition: applyFilterButton: applies the filter to the selected image.
+			 * Third condition: downloadButton: download's the filtered image.
+			 */
+			
+			/* openImageButton --> [actionEvent]:
+			 * 1) Creates JFileChooser (fileChooser) object that allows user to select a file from their computer.
+			 * 2) fileChooser.setFileFilter() restricts the user to only select images that are in the jpg, jpeg, or png file formats.
+			 * 3) Creates an int (result) that awaits user's choice from the user's computer.
+			 * 4) if statement checks if the user clicked 'OK' or approved a choice.
+			 * 		1) Creates a String (imagePath) that gets the path of the user's selected file.
+			 * 		2) uses selectedImage (an imageIcon created outside constructor) and creates the object using imagePath of the image
+			 * 		3) seletedImage gets called the resizeImage() method that passes in the selectedImage, the width of the panel, and height of the panel components. More instructions in the method.
+			 * 		4) displayImage() method gets called, which displays the image to the imagePanel component.
+			 * 5) else statement allows an error to display if the user somehow selects the wrong file type.
+			 */
+			
+			if (e.getSource() == openImageButton) {
+				JFileChooser fileChooser = new JFileChooser();
+	            fileChooser.setFileFilter(new FileNameExtensionFilter("Images", "jpg", "jpeg", "png"));
+	            int result = fileChooser.showOpenDialog(this);
+	            if (result == JFileChooser.APPROVE_OPTION) {
+	                String imagePath = fileChooser.getSelectedFile().getPath();
+	                selectedImage = new ImageIcon(imagePath);
+	                selectedImage = resizeImage(selectedImage, imagePanel.getWidth(), imagePanel.getHeight());
+	                displayImage(selectedImage);
+	            } 
+	            else {
+	            	imageError();
+	            }
+			}
+			
+			/* applyFilterButton --> [actionEvent]:
+			 * 1) Creates a String (selectedFilter) that converts the selected option from the comboBox into a String object.
+			 * 2) Switch statement for selectedFilter:
+			 * 		1) case Grayscale: calls grayScale() method that makes the image gray.
+			 * 		2) case Blur: 
+			 * 			a) Creates an int (blurScale) and sets it to -1 to start while loop.
+			 * 			b) while blurScale is less than 1 and greater than 10 (invalid options): try/catch error
+			 * 			c) Try:
+			 * 				1) Creates a String (input) and takes the users option.
+			 * 				2) if the input is blank (null), break out of the while loop
+			 * 				3) convert blurScale option from user to an Integer. 
+			 * 				4) if the integer isn't in range, the user must re-enter a value.
+			 * 			d) Catch error:
+			 * 				1) The user must enter a numeric value.
+			 * 			e) if blurScale is in range, call blur() method and pass blurScale to blur the image (see below for instructions).
+			 * 		3) case Brighten:
+			 * 			a) Creates an int (brightnessScale) and sets it to -1 to start while loop.
+			 * 			b) while brightnessScale is less than 1 and greater than 100 (invalid options): try/catch error
+			 * 			c) Try:
+			 * 				1) Creates a String (input) and takes the users option.
+			 * 				2) if the input is blank (null), break out of the while loop
+			 * 				3) convert brightnessScale option from user to an Integer. 
+			 * 				4) if the integer isn't in range, the user must re-enter a value.
+			 * 			d) Catch error:
+			 * 				1) The user must enter a numeric value.
+			 * 			e) if brightnessScale is in range, call brighten() method and pass brightnessScale to brighten the image (see below for instructions). 
+			 * 		4) case Darken:
+			 * 			a) Creates an int (darknessScale) and sets it to -1 to start while loop.
+			 * 			b) while darknessScale is less than 1 and greater than 100 (invalid options): try/catch error
+			 * 			c) Try:
+			 * 				1) Creates a String (input) and takes the users option.
+			 * 				2) if the input is blank (null), break out of the while loop
+			 * 				3) convert darknessScale option from user to an Integer. 
+			 * 				4) if the integer isn't in range, the user must re-enter a value.
+			 * 			d) Catch error:
+			 * 				1) The user must enter a numeric value.
+			 * 			e) if darknessScale is in range, call darken() method and pass darknessScale to darken the image (see below for instructions).
+			 * 		5) case Bluescale:
+			 * 			a) Calls blueScale() method to make the image blue.
+			 * 		6) case Greenscale:
+			 * 			a) Calls greenScale() method to make the image green.
+			 * 		7) case Redscale:
+			 * 			a) Calls redScale() method to make the image red.
+			 * 		8) case yellowscale:
+			 * 			a) Calls yellowScale() method to make the image yellow.
+			 * 		9) case Tealscale:
+			 * 			a) Calls tealsScale() method to make the image teal.
+			 * 		10) case Purplescale:
+			 * 			a) Calls purpleScale() method to make the image purple.
+			 * 		11) case Radioactive:
+			 * 			a) Calls radioactive() method to make the image radioactive.
+			 * 		12) case Static:
+			 * 			a) Calls staticFilter() method to make the image static.
+			 * 		13) case Random:
+			 * 			a) Calls randomColor() method to display the image with a random color.
+			 * 		14) case Blizzard Special:
+			 * 			a) Calls blizzardSpecial() method to give a 'GET HACKED' message and secret clickable link. 
+			 * 		15) Default: display message to display that there's an error passing in a filter. 
+			 */
+			
+			else if (e.getSource() == applyFilterButton) {
+	            //System.out.println(filterComboBox.getSelectedItem());
+	            String selectedFilter = (String) filterComboBox.getSelectedItem();
+	            switch (selectedFilter) {
+	            	
+	            	case "Grayscale":
+	            		grayScale();
+	            		break;
+	            	
+	            	case "Blur":
+	            		int blurScale = -1;
+	            		while (blurScale < 1 || blurScale > 10) {
+	            			try {
+	            				String input = JOptionPane.showInputDialog("What blur scale would you like? \n 1-10 (1 is minor, 10 is serious)");
+	            				if (input == null) {
+	            					break;
+	            				}
+	            				blurScale = Integer.parseInt(input);
+	            				if (blurScale < 1 || blurScale > 10) {
+	            					JOptionPane.showConfirmDialog(null, "You must enter a valid number between 1 and 10.");
+	            				}
+	            			} catch (NumberFormatException ex) {
+	            				JOptionPane.showMessageDialog(null, "Invalid input. Please enter a numeric value.");
+	            			}
+	            			if (blurScale >=1 && blurScale <= 10) {
+	            				blur(blurScale);
+	            			}
+	            		}
+	            		break;
+	            		
+	            	case "Brighten":
+	            		int brightnessLevel = -1;
+	            		while (brightnessLevel < 1 || brightnessLevel > 100) {
+	            			try {
+	            				String input = JOptionPane.showInputDialog("What brightness scale would you like? \n 1-100 (1 is minor, 100 is serious)");
+	            				if (input == null) {
+	            					break;
+	            				}
+	            				brightnessLevel = Integer.parseInt(input);
+	            				if (brightnessLevel < 1 || brightnessLevel > 100) {
+	            					JOptionPane.showConfirmDialog(null, "You must enter a valid number between 1 and 100.");
+	            				}
+	            			} catch (NumberFormatException ex) {
+	            				JOptionPane.showMessageDialog(null, "Invalid input. Please enter a numeric value.");
+	            			}
+	            		}
+	            		if (brightnessLevel >=1 && brightnessLevel <= 100) {
+	            			brighten(brightnessLevel);
+	            		}
+	            		break;
+	            		
+	            	case "Darken":
+	            	    int darknessLevel = -1;
+	            	    while (darknessLevel < 1 || darknessLevel > 100) {
+	            	        try {
+	            	            String input = JOptionPane.showInputDialog("What darkness scale would you like? \n 1-100 (1 is minor, 100 is serious)");
+	            	            if (input == null) {
+	            	                // User clicked cancel or closed the dialog
+	            	                break;
+	            	            }
+	            	            darknessLevel = Integer.parseInt(input);
+	            	            if (darknessLevel < 1 || darknessLevel > 100) {
+	            	                JOptionPane.showMessageDialog(null, "You must enter a valid number between 1 and 100.");
+	            	            }
+	            	        } catch (NumberFormatException ex) {
+	            	            JOptionPane.showMessageDialog(null, "Invalid input. Please enter a numeric value.");
+	            	        }
+	            	    }
+	            	    if (darknessLevel >= 1 && darknessLevel <= 100) {
+	            	        darken(darknessLevel);
+	            	    }
+	            	    break;
+	            	    
+	            	case "Bluescale":
+	            		blueScale();
+	            		break;
+	            	
+	            	case "Greenscale":
+	            		greenScale();
+	            		break;
+	            	
+	            	case "Redscale":
+	            		redScale();
+	            		break;
+	            	
+	            	case "Yellowscale":
+	            		yellowScale();
+	            		break;
+	            		
+	            	case "Tealscale":
+	            		tealScale();
+	            		break;
+	            		
+	            	case "Purplescale":
+	            		purpleScale();
+	            		break;
+	            		
+	            	case "Radioactive":
+	            		radioactive();
+	            		break;
+	            		
+	            	case "Static":
+	            		staticFilter();
+	            		break;
+	            		
+	            	case "Random":
+	            		randomColor();
+	            		break;
+	            	
+	            	case "Blizzard Special":
+	            		blizzardSpecial();
+	            		break;
+	            	
+	            	default:
+	            		JOptionPane.showMessageDialog(null, "Error while accessing filter. Please select an option");
+	            		break;
+	            }
+	        }
 		
 		/* downloadButton --> [actionEvent]:
 		 * 1) If statement: checks to see if there's an image at selectedImage. If not, else-statement.
@@ -363,30 +363,30 @@ public class MyFrame extends JFrame implements ActionListener {
 					+ "We highly recommend you put .png or other lossless image format at the end of the name for your image. \n"
 					+ "Press 'ok' to continue");
 			if (selectedImage != null) {
-		        JFileChooser fileChooser = new JFileChooser();
-		        int result = fileChooser.showSaveDialog(this);
-		        if (result == JFileChooser.APPROVE_OPTION) {
-		            File outputFile = fileChooser.getSelectedFile();
-		            String filePath = outputFile.getAbsolutePath();
+			JFileChooser fileChooser = new JFileChooser();
+			int result = fileChooser.showSaveDialog(this);
+			if (result == JFileChooser.APPROVE_OPTION) {
+			    File outputFile = fileChooser.getSelectedFile();
+			    String filePath = outputFile.getAbsolutePath();
 
-		            try {
-		                String fileExtension = filePath.substring(filePath.lastIndexOf('.') + 1);
-		                File imageFile = new File(filePath);
-		                
-		                // Convert Image to BufferedImage (RenderedImage)
-		                BufferedImage bufferedImage = new BufferedImage(selectedImage.getIconWidth(), selectedImage.getIconHeight(), BufferedImage.TYPE_INT_RGB);
-		                Graphics2D g2d = bufferedImage.createGraphics();
-		                g2d.drawImage(selectedImage.getImage(), 0, 0, null);
-		                g2d.dispose();
+			    try {
+				String fileExtension = filePath.substring(filePath.lastIndexOf('.') + 1);
+				File imageFile = new File(filePath);
+				
+				// Convert Image to BufferedImage (RenderedImage)
+				BufferedImage bufferedImage = new BufferedImage(selectedImage.getIconWidth(), selectedImage.getIconHeight(), BufferedImage.TYPE_INT_RGB);
+				Graphics2D g2d = bufferedImage.createGraphics();
+				g2d.drawImage(selectedImage.getImage(), 0, 0, null);
+				g2d.dispose();
 
-		                ImageIO.write(bufferedImage, fileExtension, imageFile);
-		                JOptionPane.showMessageDialog(null, "Download successful!");
-		            } catch (IOException ex) {
-		                JOptionPane.showMessageDialog(null, "Error while saving the image: " + ex.getMessage());
-		            }
-		        }
+				ImageIO.write(bufferedImage, fileExtension, imageFile);
+				JOptionPane.showMessageDialog(null, "Download successful!");
+			    } catch (IOException ex) {
+				JOptionPane.showMessageDialog(null, "Error while saving the image: " + ex.getMessage());
+			    }
+			}
 		    } else {
-		        JOptionPane.showMessageDialog(null, "No image to download");
+			JOptionPane.showMessageDialog(null, "No image to download");
 		    }
 		}
 	}
@@ -401,12 +401,12 @@ public class MyFrame extends JFrame implements ActionListener {
 	 */
 	
 	private void displayImage(ImageIcon image) {
-        JLabel imageLabel = new JLabel(image);
-        imagePanel.removeAll();
-        imagePanel.add(imageLabel);
-        imagePanel.revalidate();
-        imagePanel.repaint();
-    }
+	        JLabel imageLabel = new JLabel(image);
+	        imagePanel.removeAll();
+	        imagePanel.add(imageLabel);
+	        imagePanel.revalidate();
+	        imagePanel.repaint();
+    	}
 	
 	/* resizeImage(ImageICon, int, int) --> ImageIcon [method]:
 	 * 1) Passes the selectedImage as the imageIcon, the imagePanel's width, and imagePanel's height to resize the image accordingly with the 16:9 ratio.
@@ -426,28 +426,28 @@ public class MyFrame extends JFrame implements ActionListener {
 	 * 11) return: a new ImageIcon containing the resizedImage. */
 	
 	private ImageIcon resizeImage(ImageIcon imageIcon, int width, int height) {
-        int imageWidth = imageIcon.getIconWidth();
-        int imageHeight = imageIcon.getIconHeight();
-
-        double aspectRatio = (double) ASPECT_RATIO_WIDTH / ASPECT_RATIO_HEIGHT;
-        double imageAspectRatio = (double) imageWidth / imageHeight;
-
-        int resizedWidth, resizedHeight;
-
-        if (imageAspectRatio > aspectRatio) {
-            // Fit image width, adjust height
-            resizedWidth = width;
-            resizedHeight = (int) (width / imageAspectRatio);
-        } else {
-            // Fit image height, adjust width
-            resizedHeight = height;
-            resizedWidth = (int) (height * imageAspectRatio);
-        }
-
-        Image image = imageIcon.getImage();
-        Image resizedImage = image.getScaledInstance(resizedWidth, resizedHeight, Image.SCALE_SMOOTH);
-        return new ImageIcon(resizedImage);
-    }
+	        int imageWidth = imageIcon.getIconWidth();
+	        int imageHeight = imageIcon.getIconHeight();
+	
+	        double aspectRatio = (double) ASPECT_RATIO_WIDTH / ASPECT_RATIO_HEIGHT;
+	        double imageAspectRatio = (double) imageWidth / imageHeight;
+	
+	        int resizedWidth, resizedHeight;
+	
+	        if (imageAspectRatio > aspectRatio) {
+	            // Fit image width, adjust height
+	            resizedWidth = width;
+	            resizedHeight = (int) (width / imageAspectRatio);
+	        } else {
+	            // Fit image height, adjust width
+	            resizedHeight = height;
+	            resizedWidth = (int) (height * imageAspectRatio);
+	        }
+	
+	        Image image = imageIcon.getImage();
+	        Image resizedImage = image.getScaledInstance(resizedWidth, resizedHeight, Image.SCALE_SMOOTH);
+		return new ImageIcon(resizedImage);
+	}
 	
 	/* imageError() --> void [method]:
 	 * 1) Outputs a message saying it's an invalid file type if the user selects it. 
@@ -988,18 +988,18 @@ public class MyFrame extends JFrame implements ActionListener {
 		
 		imagePanel.addMouseListener(new MouseAdapter() {
 			@Override
-	        public void mouseClicked(MouseEvent e) {
-	            try {
-	                // Specify the URL you want to open
-	                URI uri = new URI("https://explorecanadianprovinces.web.app/");
-	                // Open the link in the user's default web browser
-	                Desktop.getDesktop().browse(uri);
-	            } catch (IOException | URISyntaxException ex) {
-	                ex.printStackTrace();
-	            }
-	            imagePanel.removeMouseListener(this);
-	        }
-        });
+		        public void mouseClicked(MouseEvent e) {
+		            try {
+		                // Specify the URL you want to open
+		                URI uri = new URI("https://explorecanadianprovinces.web.app/");
+		                // Open the link in the user's default web browser
+		                Desktop.getDesktop().browse(uri);
+		            } catch (IOException | URISyntaxException ex) {
+		                ex.printStackTrace();
+		            }
+		            imagePanel.removeMouseListener(this);
+		        }
+        	});
 		
 		selectedImage = new ImageIcon(originalImage);
 		displayImage(selectedImage);
