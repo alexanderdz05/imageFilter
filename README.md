@@ -16,7 +16,6 @@ An interactive Java Swing image-processing app that lets users load an image, ap
 ## Tech Stack
 - Java
 - Java Swing (GUI)
-- `BufferedImage`, `Graphics2D`, `ConvolveOp`, `RescaleOp` (image ops)
 
 ## How to Run
 ### Option 1: IDE (Easiest)
