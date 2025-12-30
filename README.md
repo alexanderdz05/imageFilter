@@ -18,12 +18,6 @@ An interactive Java Swing image-processing app that lets users load an image, ap
 - Java Swing (GUI)
 
 ## How to Run
-### Option 1: IDE (Easiest)
+### IDE
 1. Open the project in IntelliJ / Eclipse
 2. Run the main class that creates the frame (e.g., `MyFrame` or your `main` launcher class)
-
-### Option 2: Command line
-From the `src` directory (adjust package paths if needed):
-```bash
-javac ImageFilter/*.java
-java ImageFilter.<MainClassName>
